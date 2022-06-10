@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    &.noscroll {
+        position: static !important;
+        width: 100%;
+        height: 100%;
+        overflow: hidden !important;
+        overflow-y: hidden !important;
+        margin: 0;
+        padding: 0;
+    }
+}
+// 最外圍預設為100%
+.wrapper {
+    width: 100%;
+    margin: 0px auto;
+    background-color: #f8f8f8;
+    @include screen('mobile') {
+        overflow: hidden;
+        overflow-y: auto;
+    }
+}
+// 整體共用container樣式，請注意首頁切版頁面的整齊
+.container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: $container-max; //請看_variable.scss
+}
+.main {
+    position: relative;
+    margin: 0 auto;
+    // 可先設定一個中央區塊最大寬，限制accesskey對齊
+    @include screen('mobile') {
+        // padding-top: 577px;
+    }
+    h2 {
+        line-height: 1.25em;
+    }
+    .accesskey {
+        position: absolute;
+        top: 80px;
+    }
+}
+////////////////////////////////////////////////////////////
+// 為了與首頁區隔，請在內頁加上innerpage ClassName
+.innerpage {
+    padding-top: 0;
+    >.container {
+        @include gutter(0); //gutter 代表左右要留白
+        display: flex;
+        padding-top: 230px;
+        &:before {
+            content: '';
+            background-image: url('../images/innerpage_bg.jpg');
+            background-repeat: no-repeat;
+            background-position: center top;
+            height: 223px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            border-radius: 0 0 40px 40px;
+            z-index: 1;
+        }
+    }
+    .fixed_sidebar_block {
+        top: 160px;
+    }
+    h2.title {
+        color: $secondaryColor;
+        text-align: center;
+        display: inline-block;
+        position: relative;
+        font-size: 1.875em;
+        text-align: center;
+        margin: 20px auto 20px;
+        padding-bottom: 10px;
+        border-bottom: 4px solid #2a5080;
+        font-family: 'Noto Serif TC', serif;
+        font-weight: 700;
+        &:before {
+            content: '';
+            width: 50%;
+            height: 4px;
+            background-color: #17a5e8;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            z-index: 2;
+        }
+    }
+    .center_block {
+        flex: auto;
+        flex-basis: 92%;
+        max-width: 92%;
+        position: relative;
+        padding: 40px 50px 50px;
+        margin: -40px auto -60px;
+        box-sizing: border-box;
+        background-color: #fff;
+        border-radius: 40px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        z-index: 9;
+        text-align: center;
+        @include screen('mobile') {
+            margin: -40px auto -60px;
+            flex-basis: 90%;
+            max-width: 90%;
+        }
+        @include screen('xs_mobile') {
+            padding: 40px 30px 50px;
+        }
+    }
+    .left_block {
+        flex: none;
+        flex-basis: 260px;
+        max-width: 260px;
+        margin-right: 40px;
+        &.hidden {
+            +.center_block {
+                flex: none;
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+        +.center_block {
+            flex: auto;
+            flex-basis: calc(100% - 300px);
+            max-width: calc(100% - 300px);
+        }
+        @include screen('tablet') {
+            display: none;
+            +.center_block {
+                flex: none;
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+    &.small_size {
+        font-size: .938em;
+    }
+    &.large_size {
+        font-size: 1.125em;
+    }
+}
+.hidden {
+    display: none;
+}
+.lp, .cp, .sitemap, .sp {
+    text-align: left;
+}

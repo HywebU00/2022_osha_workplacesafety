@@ -1,0 +1,480 @@
+/////////////////////////////////////////////////////////以下為demo範例///
+// 首頁區塊設定
+// more按鈕
+a.more {
+    display: block;
+    width: 10em;
+    text-align: center;
+    height: 2.5em;
+    margin: .5em auto .5em;
+    line-height: 2.5;
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
+    text-align: center;
+    overflow: hidden;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    &:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border: 2px solid #FFF;
+        transform: rotate(45deg);
+        position: absolute;
+        right: -10px;
+        top: 14px;
+        border-left: none;
+        border-bottom: none;
+        transition: .3s ease-out;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $primaryColor;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+    &:hover,
+    &:focus,
+    &.active {
+        color: white;
+        &:before {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        &:after {
+            right: 15px;
+        }
+    }
+}
+// 範例：
+.demosection {
+    [class^="col"] {
+        border: 2px solid #FFF;
+        background: #DEDEDE;
+    }
+}
+// 側選單
+.fixed_sidebar_block {
+    position: fixed;
+    right: 50%;
+    top: 150px;
+    z-index: 99;
+    margin-right: -600px;
+    @media(max-width: 1200px) {
+        right: 0;
+        top: 150px;
+        margin-right: 0;
+    }
+    @include screen('mobile') {
+        display: none;
+    }
+    .fixed_sidebar_group {
+        .navlist {
+            margin: 0;
+            padding: 15px 8px;
+            width: 50px;
+            overflow: hidden;
+            box-sizing: border-box;
+            ul {
+                padding: 0;
+                margin: 0;
+                font-size: 0.938em;
+                list-style: none;
+                li {
+                    margin-bottom: 2px;
+                    margin-left: 5px;
+                    transition: .2s;
+                    position: relative;
+                    writing-mode: vertical-rl;
+                    a {
+                        display: flex;
+                        justify-content: center;
+                        padding: 1em 1.2em 1em .4em;
+                        text-decoration: none;
+                        color: #fff;
+                        background: rgb(11, 188, 253);
+                        background: linear-gradient(90deg, rgba(11, 188, 253, 1) 0%, rgba(38, 135, 205, 1) 100%);
+                        border-radius: 5px 0 0 5px;
+                        letter-spacing: 0.15em;
+                        box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 10px;
+                        &:hover, &:focus {
+                            background: rgb(38, 135, 205);
+                            background: linear-gradient(90deg, rgba(38, 135, 205, 1) 0%, rgba(26, 96, 146, 1) 100%);
+                            padding: 1em 1.2em 1em .4em;
+                        }
+                    }
+                    &:hover {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+// 職業安全的災害與優良
+.occupational_safety_block {
+    .container {
+        background-image: url('../images/header_bg.jpg');
+        background-repeat: no-repeat;
+        background-position: center top;
+        border-radius: 0 0 40px 40px;
+        height: 577px;
+       
+    }
+    .case_illustrate_block {
+        background-color: rgba(0, 0, 0, 0.74);
+        border-radius: 100px;
+        width: 80%;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 95px;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        &:before {
+            content: '';
+            background-image: url('../images/labor_pic.png');
+            background-repeat: no-repeat;
+            width: 400px;
+            height: 342px;
+            position: absolute;
+            left: 50%;
+            top: -87px;
+            margin-left: -200px;
+        }
+        @include screen('tablet') {
+            display: block;
+            width: 50%;
+            margin: 0 0 0 45px;
+            border-radius: 40px;
+            bottom: 95px;
+            transition: .5s;
+            &:before {
+                display: none;
+            }
+        }
+        @media(max-width: 480px) {
+            margin: 0 25px 0 25px;
+            width: auto;
+            transition: .5s;
+        }
+        .disaster_block {
+            flex: none;
+            flex-basis: 46%;
+            max-width: 46%;
+            color: #fff;
+            padding: 20px 20px 20px 70px;
+            box-sizing: border-box;
+            // outline: 1px solid red;
+            @media(max-width: 1200px) {
+                padding: 20px 20px 20px 50px;
+            }
+            @include screen('tablet') {
+                flex-basis: 100%;
+                max-width: 100%;
+                padding: 20px 30px 20px;
+            }
+            .title {
+                &:after {
+                    content: '';
+                    background-image: url('../images/icon_danger.png');
+                    background-repeat: no-repeat;
+                    background-position: right top;
+                    position: absolute;
+                    top: -30px;
+                    right: -62px;
+                    width: 60px;
+                    height: 56px;
+                    @media(max-width: 480px){
+                        right:0;
+                        top:-15px;
+                    }
+                }
+            }
+        }
+        .excellent_block {
+            flex: none;
+            flex-basis: 46%;
+            max-width: 46%;
+            color: #fff;
+            padding: 20px 50px 20px 40px;
+            box-sizing: border-box;
+            // outline: 1px solid red;
+            @media(max-width: 1200px) {
+                padding: 20px 40px 20px 40px;
+            }
+            @include screen('tablet') {
+                flex-basis: 100%;
+                max-width: 100%;
+                padding: 20px 30px 20px;
+            }
+            .title {
+                &:after {
+                    content: '';
+                    background-image: url('../images/icon_safety.png');
+                    background-repeat: no-repeat;
+                    background-position: right top;
+                    position: absolute;
+                    top: -30px;
+                    right: -62px;
+                    width: 60px;
+                    height: 56px;
+                    @media(max-width: 480px){
+                        right:0;
+                        top:-15px;
+                    }
+                }
+            }
+        }
+        .title {
+            font-size: 1.625em;
+            margin-bottom: 15px;
+            margin-top: 0;
+            color: $lightColor;
+            font-weight: bolder;
+            font-family: 'Noto Serif TC', serif;
+            letter-spacing: 0.05em;
+            position: relative;
+            display: inline-block;
+            line-height: 1.3em;
+            @media(max-width: 480px){
+                padding-right:70px;
+            }
+            
+        }
+        p {
+            font-size: 1em;
+            @include text-line(3, 23px);
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+// 統計案件
+.statistical_case_block {
+    position: relative;
+    z-index: 2;
+    .statistical_case_group {
+        padding: 0px 30px 50px;
+        margin: -40px 45px -60px;
+        box-sizing: border-box;
+        background-color: #fff;
+        border-radius: 40px;
+       box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        display: flex;
+        flex-wrap: wrap;
+        @media(max-width: 480px) {
+            margin: -40px 25px -60px;
+        }
+    }
+    .case_search_btn {
+        flex: auto;
+        flex-basis: 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: -28px;
+        a {
+            display: inline-block;
+            padding: 18px 35px;
+            font-size: 1.687em;
+            border-radius: 50px;
+            color: #fff;
+            font-family: 'Noto Serif TC', serif;
+            background: rgb(12, 187, 252);
+            background: linear-gradient(180deg, rgba(12, 187, 252, 1) 0%, rgba(39, 135, 205, 1) 87%);
+            box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            letter-spacing: 0.05em;
+            transition: .5s;
+            line-height: 1.2em;
+            &:hover, &:focus {
+                background: rgb(252, 62, 12);
+                background: linear-gradient(180deg, rgba(252, 62, 12, 1) 0%, rgba(153, 36, 36, 1) 100%);
+            }
+        }
+    }
+    .statistical_case_left {
+        flex: none;
+        flex-basis: 54%;
+        max-width: 54%;
+        // outline: 1px solid red;
+        display: flex;
+        flex-wrap: wrap;
+        @include screen('tablet') {
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+        .excellent_safety_block, .disaster_block {
+            text-align: center;
+            flex: none;
+            flex-basis: 48%;
+            max-width: 48%;
+            padding: 0 25px 0 28px;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+            @media(max-width: 650px) {
+                flex-basis: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+            .title {
+                color: #2a5080;
+                font-family: 'Noto Serif TC', serif;
+                font-size: 1.375em;
+                margin-bottom: 10px;
+                font-weight: 700;
+                line-height: 1.3em;
+            }
+            .year {
+                text-align: center;
+                padding: 1px 5px;
+                background-color: #f3f3f3;
+                font-family: 'Jost', sans-serif;
+                font-weight: 400;
+                color: #2a5080;
+                font-size: 1.125em;
+                margin-bottom: 10px;
+            }
+            .number {
+                color: $color-orange;
+                font-weight: bolder;
+                margin-top: 40px;
+                margin-bottom: 20px;
+                font-size: 1.188em;
+                span {
+                    font-size: 4em;
+                    font-weight: normal;
+                    font-family: 'Jost', sans-serif;
+                    font-weight: 300;
+                }
+            }
+            .more {
+                width: 100%;
+                a {
+                    padding: 3px 5px;
+                    font-size: 0.938em;
+                    border-radius: 50px;
+                    color: #fff;
+                    display: block;
+                    background: rgb(12, 187, 252);
+                    background: linear-gradient(180deg, rgba(12, 187, 252, 1) 0%, rgba(39, 135, 205, 1) 87%);
+                    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.8);
+                    letter-spacing: 0.05em;
+                    &:hover, &:focus {
+                        background: rgb(38, 135, 205);
+                        background: linear-gradient(180deg, rgba(38, 135, 205, 1) 0%, rgba(26, 96, 146, 1) 87%);
+                    }
+                    @include screen('tablet') {
+                        display: inline-block;
+                        min-width: 200px;
+                    }
+                }
+            }
+        }
+        .excellent_safety_block {
+            border-right: 1px solid #717171;
+            padding: 0 28px 0 25px;
+            @media(max-width: 650px) {
+                border-right: none;
+                padding: 0;
+            }
+        }
+        // 
+        .question_block {
+            flex: auto;
+            flex-basis: 100%;
+            max-width: 100%;
+            display: flex;
+            padding: 0 50px 0 25px;
+            box-sizing: border-box;
+            @include screen('tablet') {
+                margin-bottom: 1.5em;
+            }
+            @media(max-width: 650px) {
+                padding: 0;
+            }
+            @media(max-width: 480px) {
+                padding: 0;
+                display: block;
+            }
+            .pic {
+                flex: none;
+                flex-basis: 100px;
+                max-width: 100px;
+                @media(max-width: 480px) {
+                    flex-basis: 100%;
+                    max-width: 100%;
+                    text-align: center;
+                }
+            }
+            .content {
+                flex: auto;
+                flex-basis: calc(100% - 100px);
+                max-width: calc(100% - 100px);
+                 @media(max-width: 480px) {
+                    flex-basis: 100%;
+                    max-width: 100%;
+                }
+                .question {
+                    padding: 3px 6px;
+                    background-color: #f3f3f3;
+                    color: #333;
+                    margin-bottom: 5px;
+                    font-weight: bolder;
+                }
+                p {
+                    flex: auto;
+                    color: #333;
+                    font-weight: bolder;
+                    padding: 0 6px;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .statistical_case_right {
+        flex: none;
+        flex-basis: 44%;
+        max-width: 44%;
+        @include screen('tablet') {
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+        .statistical_pic {
+            .title {
+                padding: 5px;
+                color: #333;
+                background-color: #dadada;
+                text-align: center;
+                font-size: 1.125em;
+                font-weight: bolder;
+            }
+            .content {
+                min-height: 290px;
+                background-color: #f3f3f3;
+                text-align: center;
+                padding: 20px 20px 16px;
+            }
+        }
+    }
+}

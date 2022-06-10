@@ -1,0 +1,44 @@
+.breadcrumb {
+    
+    padding: .1em 0em .1em;
+    font-size: .938em;
+    margin: 0px auto 5px;
+    text-align: left;
+    position:relative;
+    ul {
+        @include li-reset;
+        li {
+            display: inline-block;
+            margin: 0px .1em .1em 0px;
+            &:before {
+                @extend %slash;
+            }
+            &:first-child:before {
+                content: "";
+                display: inline-block;
+                color: #666;
+                margin-left: 0;
+                padding: 0;
+            }
+            &:first-child{
+                margin-right: 10px;
+            }
+            a.home{
+                font-size: 0;
+                background-image: url('../images/icon_home.jpg');
+                background-repeat:no-repeat;
+                background-position:0 0;
+                width:19px;
+                height: 18px;
+                position:absolute;
+                left:0;
+                top:5px;
+                color:#fff;
+            }
+        }
+    }
+    a {
+        @include aSetting_nocolor;
+         position:relative;
+    }
+}
