@@ -75,10 +75,10 @@ a.more {
 // 側選單
 .fixed_sidebar_block {
     position: fixed;
-    right: 50%;
+    right: 0;
     top: 150px;
     z-index: 99;
-    margin-right: -600px;
+    // margin-right: -600px;
     @media(max-width: 1200px) {
         right: 0;
         top: 150px;
@@ -138,7 +138,6 @@ a.more {
         background-position: center top;
         border-radius: 0 0 40px 40px;
         height: 577px;
-       
     }
     .case_illustrate_block {
         background-color: rgba(0, 0, 0, 0.74);
@@ -205,9 +204,9 @@ a.more {
                     right: -62px;
                     width: 60px;
                     height: 56px;
-                    @media(max-width: 480px){
-                        right:0;
-                        top:-15px;
+                    @media(max-width: 480px) {
+                        right: 0;
+                        top: -15px;
                     }
                 }
             }
@@ -239,9 +238,9 @@ a.more {
                     right: -62px;
                     width: 60px;
                     height: 56px;
-                    @media(max-width: 480px){
-                        right:0;
-                        top:-15px;
+                    @media(max-width: 480px) {
+                        right: 0;
+                        top: -15px;
                     }
                 }
             }
@@ -257,10 +256,9 @@ a.more {
             position: relative;
             display: inline-block;
             line-height: 1.3em;
-            @media(max-width: 480px){
-                padding-right:70px;
+            @media(max-width: 480px) {
+                padding-right: 70px;
             }
-            
         }
         p {
             font-size: 1em;
@@ -280,7 +278,7 @@ a.more {
         box-sizing: border-box;
         background-color: #fff;
         border-radius: 40px;
-       box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
         display: flex;
         flex-wrap: wrap;
         @media(max-width: 480px) {
@@ -300,16 +298,16 @@ a.more {
             font-size: 1.687em;
             border-radius: 50px;
             color: #fff;
-            font-family: 'Noto Serif TC', serif;
+            font-weight: bolder;
             background: rgb(12, 187, 252);
             background: linear-gradient(180deg, rgba(12, 187, 252, 1) 0%, rgba(39, 135, 205, 1) 87%);
             box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.01em;
             transition: .5s;
             line-height: 1.2em;
             &:hover, &:focus {
-                background: rgb(252, 62, 12);
-                background: linear-gradient(180deg, rgba(252, 62, 12, 1) 0%, rgba(153, 36, 36, 1) 100%);
+                background: rgb(255, 135, 83);
+                background: linear-gradient(180deg, rgba(255, 135, 83, 1) 0%, rgba(234, 85, 20, 1) 100%);
             }
         }
     }
@@ -431,7 +429,7 @@ a.more {
                 flex: auto;
                 flex-basis: calc(100% - 100px);
                 max-width: calc(100% - 100px);
-                 @media(max-width: 480px) {
+                @media(max-width: 480px) {
                     flex-basis: 100%;
                     max-width: 100%;
                 }
