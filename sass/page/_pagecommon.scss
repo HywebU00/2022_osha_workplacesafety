@@ -315,18 +315,24 @@ h3.title {
             @include text-line(3, 40px);
             line-height: 33px;
         }
+        
         .number {
             text-align: center;
-            font-size: 4em;
-            color: #ea5413;
             margin: 0 0 10px;
             font-weight: border;
             font-family: 'Jost', sans-serif;
             font-weight: 500;
             padding: 25px 0;
+            color:#333;
+            font-size: 1.25em;
+            span {
+                font-size: 4em;
+                color: #ea5413;
+                margin-right: 10px;
+            }
         }
         .time {
-            font-size: 1.25em;
+            font-size: 1.375em;
             color: #333;
             margin: 0 0 25px;
             text-align: center;
@@ -369,10 +375,10 @@ h3.title {
         .number {
             text-align: center;
             margin: 0 0 10px;
-            font-weight: border;
             font-family: 'Jost', sans-serif;
             font-weight: 500;
             padding: 25px 0;
+            font-size: 1.125em;
             span {
                 font-size: 4em;
                 color: #ea5413;
