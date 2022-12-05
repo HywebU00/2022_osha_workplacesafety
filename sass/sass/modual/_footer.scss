@@ -92,18 +92,50 @@ footer {
             &.mail {
                 background-image: url('../images/icon_mail.png');
                 background-repeat: no-repeat;
-                background-position: 3px 7px;
+                background-position: 3px 9px;
             }
             &.tel {
                 background-image: url('../images/icon_tel.png');
                 background-repeat: no-repeat;
                 background-position: 3px 7px;
             }
-            a{
-                color:$color-word;
-                text-decoration: underline;
-                &:hover{
-                    color:$secondaryColor;
+            &.browse_width {
+                background-image: url('../images/icon/icon_global.svg');
+                background-repeat: no-repeat;
+                background-position: 3px 5px;
+                background-size: 17px;
+            }
+            &.visit {
+                background-image: url('../images/icon/icon_man.svg');
+                background-repeat: no-repeat;
+                background-position: 2px 3px;
+                background-size: 18px;
+            }
+        }
+        ul {
+            margin: 0 0 1em;
+            padding: 0;
+            list-style-type: none;
+            li {
+                margin-bottom: .5em;
+                a {
+                    color: $color-word;
+                    text-decoration: underline;
+                    padding: 0 0 0 1.6em;
+                    position: relative;
+                    &:before {
+                        content: '';
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background-color: #333;
+                        position: absolute;
+                        left: 5px;
+                        top: 7px;
+                    }
+                    &:hover {
+                        color: $secondaryColor;
+                    }
                 }
             }
         }
