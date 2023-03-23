@@ -112,7 +112,7 @@
         }
         img {
             display: block;
-            max-width: 470px;
+            max-width:550px;
             height: 58px;
         }
         @include screen('mobile') {
@@ -127,7 +127,7 @@
             border-radius: 0;
             img {
                 width: auto;
-                // height: auto;
+                max-width:470px;
                 max-height: 57px;
                 margin: 0px auto;
                 transform: scale(0.8);
