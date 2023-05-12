@@ -27,7 +27,7 @@
             padding: 0;
             // border-top: 2px solid $primaryColor;
             &>li {
-                padding:0;
+                padding: 0;
                 border-bottom: 1px solid #DDD;
                 position: relative; // outline: 1px solid blue;
                 .tag {
@@ -35,11 +35,11 @@
                 }
                 &>a {
                     display: block;
-                     padding: 1em 0 1em 8.5em;
+                    padding: 1em 0 1em 8.5em;
                     position: relative;
                     line-height: 1.45em;
                     color: $color-word;
-                    @include screen('xs_mobile'){
+                    @include screen('xs_mobile') {
                         padding: 1em 0 1em 1.5em;
                     }
                     &:hover, &:focus {
@@ -57,15 +57,15 @@
                             display: inline-block;
                         }
                     }
-                    &:before{
+                    &:before {
                         content: '';
-                        width:6px;
+                        width: 6px;
                         height: 6px;
                         background-color: $secondaryColor;
                         border-radius: 50%;
-                        position:absolute;
-                        left:5px;
-                        top:25px;
+                        position: absolute;
+                        left: 5px;
+                        top: 25px;
                     }
                 }
                 span.dept {
@@ -76,20 +76,137 @@
                     }
                 }
                 time {
-                    display:inline-block;
+                    display: inline-block;
                     color: #666;
                     font-size: .938em;
                     margin: 0 20px 0 -7.4em;
-                    @include screen('xs_mobile'){
+                    @include screen('xs_mobile') {
                         display: block;
-                         margin: 0 0 .5em 0;
+                        margin: 0 0 .5em 0;
                     }
                 }
             }
         }
     }
 }
-
+// 重大職業災害公開網
+.publicblock {
+    padding: 1em 0;
+    .publiclist {
+        padding: 1.5em;
+        border: 1px solid #ccc;
+        border-radius: 0.2em;
+        margin-bottom: 1em;
+        .business_unit {
+            background-color: $secondaryColor;
+            color: #fff;
+            padding: .3em 1em;
+            margin-bottom: 1em;
+            display: inline-block;
+            border-radius: 0.2em;
+            .num {
+                padding-right: 1em;
+                margin-right: .5em;
+                position: relative;
+                font-weight: bolder;
+                letter-spacing: 0.1em;
+                &:after {
+                    content: '/';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    color: #fff;
+                }
+            }
+        }
+        .listgroup01 {
+            margin: 0 0 1em;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                flex: 0 0 auto;
+                padding-right: 1em;
+                margin-right: 1em;
+                position: relative;
+                font-size: 0.938em;
+                &:after {
+                    content: '';
+                    width: 1px;
+                    height: 20px;
+                    background-color: #ccc;
+                    position: absolute;
+                    right: 0;
+                    top: 3px;
+                    color: #fff;
+                }
+                &:last-child {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+            @include screen('xs_mobile') {
+                display: block;
+                li{
+                    padding:0 0 0 1em;
+                    margin:0;
+                    &:after{
+                        display: none;
+                    }
+                    &:before{
+                        content: '';
+                        width:6px;
+                        height: 6px;
+                        border-radius:50%;
+                        background-color:#666;
+                        position:absolute;
+                        left:0;
+                        top:10px;
+                    }
+                }
+            }
+        }
+        .listgroup02 {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+                margin-bottom: .5em;
+                font-size: 0.938em;
+                padding: 0 0 0 135px;
+                span {
+                    min-width: 120px;
+                    display: inline-block;
+                    background-color: #eee;
+                    text-align: center;
+                    margin-right: 1em;
+                    padding: 2px;
+                    border-radius: 50px;
+                    margin-left: -135px;
+                    font-weight: bolder;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                @include screen('xs_mobile') {
+                    padding: 0;
+                    span {
+                        width: 100%;
+                        min-width: 100%;
+                        display: block;
+                        margin-right: 0;
+                        margin-left: 0;
+                        margin-bottom: .5em;
+                        text-align: left;
+                        padding: 3px .5em;
+                    }
+                }
+            }
+        }
+    }
+}
 // .album {
 //     margin: 1em auto;
 //     ul {
@@ -113,7 +230,6 @@
 //                 flex:0 0 96%;
 //                 margin:0 3% 5%;
 //             }
-            
 //         }
 //     }
 // }
