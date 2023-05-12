@@ -99,7 +99,7 @@
         float: left;
         // width: 470px;
         // height: 58px;
-        margin: 20px 0 0 25px;
+        margin:0px 0 0 25px;
         padding: 5px 25px 5px 10px;
         box-sizing: border-box;
         border-radius: 50px;
@@ -109,6 +109,7 @@
         }
         a {
             display: inline-block;
+
         }
         img {
             display: block;
@@ -142,57 +143,40 @@
     }
 }
 // 導覽列
-// .navigation {
-//     @extend %clearfix;
-//     box-sizing: border-box;
-//     position: absolute;
-//     right: 0;
-//     bottom: 80px;
-//     @include screen('mobile') {
-//         display: none;
-//     }
-//     .navlist {
-//         margin: 0;
-//         padding: 15px 8px;
-//         width: 50px;
-//         overflow: hidden;
-//         box-sizing: border-box;
-//         ul {
-//             padding: 0;
-//             margin: 0;
-//             font-size: 0.938em;
-//             list-style: none;
-//             li {
-//                 margin-bottom: 2px;
-//                 margin-left: 5px;
-//                 transition: .2s;
-//                 position: relative;
-//                 writing-mode: vertical-rl;
-//                 a {
-//                     display: flex;
-//                     justify-content: center;
-//                     padding: 1em 1.2em 1em .4em;
-//                     text-decoration: none;
-//                     color: #fff;
-//                     background: rgb(11, 188, 253);
-//                     background: linear-gradient(90deg, rgba(11, 188, 253, 1) 0%, rgba(38, 135, 205, 1) 100%);
-//                     border-radius: 5px 0 0 5px;
-//                     letter-spacing: 0.15em;
-//                     box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 10px;
-//                     &:hover, &:focus {
-//                         background: rgb(38, 135, 205);
-//                         background: linear-gradient(90deg, rgba(38, 135, 205, 1) 0%, rgba(26, 96, 146, 1) 100%);
-//                         padding: 1em 1.2em 1em .4em;
-//                     }
-//                 }
-//                 &:hover {
-//                     margin-left: 0;
-//                 }
-//             }
-//         }
-//     }
+.navigation {
+    margin: 20px 40px 0 0;
+    @include screen('mobile') {
+        display: none;
+    }
+     .navlist {
+            flex: 1 1 auto;
+            margin: 0.25em 0.5em 0 0;
+            ul {
+                padding: 0;
+                margin: 0;
+                font-size: 0.875em;
+                list-style: none;
+                display: flex;
+                justify-content: flex-end;
+               
+            }
+            li {
+                flex: 0 0 auto;
+                margin:0 3px 5px;
+                a {
+                    display: block;
+                    padding: 0.3em 1em;
+                    background-color:#fff;
+                    border-radius:50px;
+                    text-decoration: none;
+                    border:1px solid #ccc;
+                    @include aSetting_nocolor;
+                    color:#333;
+                }
+            }
+        }
     
-// }
+}
 //search
 .search {
     display: flex;

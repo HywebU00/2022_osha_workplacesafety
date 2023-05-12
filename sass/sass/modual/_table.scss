@@ -2,6 +2,7 @@
 table {
     width: 100%;
     border-collapse: collapse;
+    background-color: #f9f7f7;
     @include screen('xs_mobile') {
         width: 100%;
     }
@@ -18,22 +19,31 @@ table {
     //     }
     // }
     td {
-        padding: .5em;
+        padding: 1em .5em;
         text-align: left;
     }
-    td{
-        border: #ddd 1px solid;
+    td {
+        border-bottom: #ddd 1px solid;
         word-break: break-all;
         a {
             word-break: break-all;
         }
+        &.num, &.date {
+            text-align: center;
+            white-space: nowrap;
+        }
+        &.aCenter {
+            text-align: center;
+        }
     }
     th {
-        background-color: #F3F3F3;
-        color: #333;
-        border: #DDD 1px solid;
+        background: rgb(30, 102, 153);
+        background: linear-gradient(0deg, rgba(30, 102, 153, 1) 0%, rgba(52, 147, 214, 1) 80%, rgba(12, 187, 252, 1) 100%);
+        color: #fff;
+        border-bottom: #DDD 1px solid;
         text-align: center;
         white-space: nowrap;
+        padding: 1em .5em;
     }
     &.table_hover {
         tr:hover {
@@ -47,6 +57,12 @@ table {
     }
 }
 .table_list {
+    margin: 1em 0 2em;
+    caption {
+        text-align: left;
+        padding: 2em 0;
+        line-height: 1.7em;
+    }
     @include screen('xs_mobile') {
         background-color: transparent !important; //Force table to not be like tables anymore
         thead,
@@ -84,6 +100,12 @@ table {
                 text-align: left;
                 font-weight: bold;
                 color: #000;
+            }
+            &.num {
+                text-align: left;
+            }
+            &.aCenter {
+                text-align: left;
             }
         }
     }
@@ -161,8 +183,8 @@ table {
         }
     }
 }
-.scroltable{
-    min-width:600px !important;
+.scroltable {
+    min-width: 600px !important;
 }
 .scroltable-wrapper {
     position: relative;
@@ -183,7 +205,7 @@ table {
 }
 .scroltable-nav.scroltable-nav-left {
     left: 0;
-    @include gradient(rgba(255,255,255,1),rgba(255,255,255,0),horizontal);
+    @include gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0), horizontal);
     .tablearrow_left {
         position: fixed;
         left: 0em;
@@ -208,7 +230,7 @@ table {
 }
 .scroltable-nav.scroltable-nav-right {
     right: 0;
-    @include gradient(rgba(255,255,255,0),rgba(255,255,255,1),horizontal);
+    @include gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), horizontal);
     .tablearrow_right {
         position: fixed;
         top: 0em;
@@ -244,5 +266,13 @@ table {
     }
     to {
         right: .3em;
+    }
+}
+
+.publicTb{
+    // width:100%;
+    // overflow-x: scroll;
+    table{
+        width: 2000px;
     }
 }

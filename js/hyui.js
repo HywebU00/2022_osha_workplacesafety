@@ -32,6 +32,7 @@ $(function() {
     var menu_status = false,
         _sidebar = $('.sidebar'),
         _search = $('.search'),
+        _headernav = $('.navigation'),
         _nav = $('.fixed_sidebar_block'),
         _sidebarClose = $('.sidebarClose'),
         _sidebarCtrl = $('.sidebarCtrl'),
@@ -99,6 +100,7 @@ $(function() {
     });
     // 先複製過去
     _nav.clone().prependTo(_mArea);
+    _headernav.clone().prependTo(_mArea);
     _menu.clone().prependTo(_mArea);
     _megamenu.clone().prependTo(_mArea);
     _search.clone().prependTo(_body).removeClass('search').addClass('m_search');
@@ -777,7 +779,7 @@ $(function() {
     // /*------------------------------------*/
     $('table').each(function(index, el) {
         //判斷沒有table_list
-        if ($(this).parents('.table_list').length == 0 && $(this).parents('.fix_th_table').length == 0 && $(this).parent('form').length == 0) {
+        if ($(this).parents('.table_list').length == 0 && $(this).parents('.fix_th_table').length == 0 && $(this).parent('form').length == 0 ) {
             $(this).scroltable();
         }
     });
