@@ -3,9 +3,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     background-color: #f9f7f7;
-    @include screen('xs_mobile') {
-        width: 100%;
-    }
+    
     th,
     // td:not(.gsib_b,.gsc-search-button) {
     //     padding: .5em;
@@ -63,7 +61,7 @@ table {
         padding: 2em 0;
         line-height: 1.7em;
     }
-    @include screen('xs_mobile') {
+    @include screen('mobile') {
         background-color: transparent !important; //Force table to not be like tables anymore
         thead,
         tbody,
@@ -92,7 +90,7 @@ table {
             &:before {
                 content: attr(data-title);
                 position: absolute;
-                top: .5em;
+                top: 1em;
                 left: .5em;
                 width: 30%;
                 padding-right: 10px;
@@ -101,7 +99,7 @@ table {
                 font-weight: bold;
                 color: #000;
             }
-            &.num {
+            &.num ,&.date{
                 text-align: left;
             }
             &.aCenter {
@@ -109,6 +107,18 @@ table {
             }
         }
     }
+    @media(max-width: 400px){
+            table{
+                td{
+                    &:before {
+                         width: 90%;
+                    }
+                   padding-top:3em;
+                    padding-left:.5em !important;
+                    display: block;
+                }
+            }
+        }
 }
 // fix_th_table
 .fix_th_table {
@@ -268,11 +278,14 @@ table {
         right: .3em;
     }
 }
-
-.publicTb{
-    // width:100%;
-    // overflow-x: scroll;
-    table{
-        width: 2000px;
+// 
+.publicblock {
+    &.publicTb {
+        width: 100%;
+        // overflow-x: scroll;
+        table {
+            width: 2000px;
+        }
     }
+    
 }

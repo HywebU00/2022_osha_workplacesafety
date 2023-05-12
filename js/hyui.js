@@ -195,6 +195,8 @@ $(function() {
             _body.off('touchmove');
             $('.m_search').hide();
             $('.language').find('ul').hide();
+            // 
+            $('.publicblock').addClass('table_list').removeClass('publicTb');
         } else {
             /*-----------------------------------*/
             /////////////// PC版設定 /////////////
@@ -204,6 +206,7 @@ $(function() {
             $('.m_search').hide();
             search_mode = false;
             $('.language').find('ul').hide();
+            $('.publicblock').removeClass('table_list').addClass('publicTb');
             // 副選單滑出
             liHasChild.on({
                 mouseenter: function() {
