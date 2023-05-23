@@ -366,7 +366,8 @@ select::-ms-expand {
                 }
             }
             >input[type="text"],
-            >input[type="date"] {
+            >input[type="date"],
+            >input[type="number"] {
                 width: 10em;
                 @include screen('xs_mobile') {
                     width: calc(100% - .6em);
